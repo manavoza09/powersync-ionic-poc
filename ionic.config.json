@@ -1,0 +1,7 @@
+{
+  "name": "PowerSync Ionic Example",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
