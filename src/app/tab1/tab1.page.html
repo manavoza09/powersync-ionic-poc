@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      PowerSync Example
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,28 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">PowerSync Example</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <app-explore-container name="PowerSync Example"></app-explore-container>
+
+  <h2>
+    {{ leads?.length || 0 }}
+    <span *ngIf="leads?.length === 1; else elseBlock">lead</span>
+    <ng-template #elseBlock>leads</ng-template>
+  </h2>
+
+  <ul>
+    <li *ngFor="let lead of leads">
+      <p>{{ lead.name }}</p>
+      <div class="btn-wrapper">
+        <button class="btn btn-save edit">Edit</button>
+        <button class="btn btn-warn">Remove</button>
+      </div>
+    </li>
+  </ul>
+
+  <!-- Insert Sample Lead -->
+  <button class="btn btn-save" (click)="addSampleLead()">Add Sample Lead</button>
 </ion-content>
