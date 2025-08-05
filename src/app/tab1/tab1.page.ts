@@ -19,7 +19,7 @@ export class Tab1Page {
   }
 
   async *getLeads(): AsyncIterable<any> {
-    for await (const result of this.powerSync.db.watch('SELECT * leads')) {
+    for await (const result of this.powerSync.db.watch('SELECT * FROM leads')) {
       yield result.rows?._array || [];
     }
   }
